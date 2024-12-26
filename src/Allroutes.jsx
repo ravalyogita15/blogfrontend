@@ -2,20 +2,20 @@ import React from 'react'
 import {Route,Routes} from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import SignIn from './pages/SignIn'
-import SignUp from './pages/Signup'
 import NotesPage from './pages/NotesPage'
 import NotesCreate from './pages/NotesCreate'
 import NotesDetail from './pages/NotesDetail'
 import PrivateRoutes from './components/Privateroute'
 import Update from './pages/Update'
 import GetAllNotes from './pages/GetAllNotes'
+import Signup from './pages/SignUp'
 
 const Allroutes = () => {
   return (
     <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/sign-in" element={<SignIn />}></Route>
-        <Route path="/sign-up" element={<SignUp />}></Route>
+        <Route path="/sign-up" element={<Signup />}></Route>
         <Route path="/notes" element={
           <PrivateRoutes>
           <NotesPage />

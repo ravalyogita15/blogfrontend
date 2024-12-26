@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
- function SignUp() {
+ function Signup() {
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
@@ -17,12 +17,12 @@ import { toast } from "react-toastify";
     axios.post(`${import.meta.env.VITE_BASEURL}/user/signup`,{name,email,password})
     .then((res)=>{
       console.log(res.data.message);
-      navigate("/sign-in")
+      navigate("/sign-In")
       toast.success(res.data.message)
     })
     .catch((err)=>{
       console.log(err);
-      toast.error(err)
+      toast.error(err.response.data.message)
     })
   };
 
@@ -101,4 +101,4 @@ import { toast } from "react-toastify";
     </section>
   );
 }
-export default SignUp
+export default Signup
